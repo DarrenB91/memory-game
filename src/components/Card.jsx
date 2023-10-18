@@ -5,8 +5,6 @@ import { useEffect } from "react";
 
 function Card({ onClick }) {
   const [pressStatus, setPressStatus] = useState("unpressed");
-  const [dogdata, setDogData] = useState(null);
-  const [errorState, setErrorState] = useState(null);
 
   const handleCardClick = () => {
     if (pressStatus === "pressed") {
@@ -16,10 +14,6 @@ function Card({ onClick }) {
       onClick("incrementScore");
     }
   };
-
-  if (!dogdata) {
-    return <p>Loading...</p>;
-  }
 
   return (
     <>

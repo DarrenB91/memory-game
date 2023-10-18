@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import CardChooser from "../utils/cardchooser";
 import dogsData from "../assets/dogs.json";
+import { v4 as uuidv4 } from "uuid";
 
 const CardList = () => {
   const [selectedDogs, setSelectedDogs] = useState([]);
@@ -14,7 +15,7 @@ const CardList = () => {
   return (
     <div>
       {selectedDogs.map((dog) => (
-        <Card key={dog.name} name={dog.name} image={dog.image} />
+        <Card key={uuidv4()} name={dog.name} image={dog.image} />
       ))}
     </div>
   );

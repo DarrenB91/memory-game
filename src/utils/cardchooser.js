@@ -1,4 +1,3 @@
-
 function CardChooser(data) {
   let selected = [];
   let keys = Object.keys(data);
@@ -7,7 +6,7 @@ function CardChooser(data) {
     let randomIndex = Math.floor(Math.random() * keys.length);
     let breed = keys[randomIndex];
     let image = data[breed];
-    selected.push({ breed, image });
+    selected.push({ name: breed, image: data[breed] });
   }
 
   return selected;
