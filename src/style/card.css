@@ -1,0 +1,28 @@
+.card-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-container img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .card-container p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
