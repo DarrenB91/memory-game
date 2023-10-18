@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../style/card.css";
 import { useEffect } from "react";
 
-function Card({ onClick }) {
+function Card({ name, image, onClick }) {
   const [pressStatus, setPressStatus] = useState("unpressed");
 
   const handleCardClick = () => {
@@ -16,12 +16,10 @@ function Card({ onClick }) {
   };
 
   return (
-    <>
-      <div onClick={handleCardClick} className="card-container">
-        <img src={dogdata.image} alt={dogdata.name} />
-        <p>{dogdata.name}</p>
-      </div>
-    </>
+    <div onClick={() => onClick(dog)} className="card-container">
+      <img src={image} alt={name} />
+      <p>{name}</p>
+    </div>
   );
 }
 

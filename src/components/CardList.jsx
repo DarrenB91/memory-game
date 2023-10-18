@@ -4,7 +4,7 @@ import CardChooser from "../utils/cardchooser";
 import dogsData from "../assets/dogs.json";
 import { v4 as uuidv4 } from "uuid";
 
-const CardList = () => {
+function CardList({}) {
   const [selectedDogs, setSelectedDogs] = useState([]);
 
   useEffect(() => {
