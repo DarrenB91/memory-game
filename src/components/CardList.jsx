@@ -13,7 +13,7 @@ function CardList({}) {
   }, []);
 
   return (
-    <div>
+    <div className="dogboard">
       {selectedDogs.map((dog) => (
         <Card key={uuidv4()} name={dog.name} image={dog.image} />
       ))}
