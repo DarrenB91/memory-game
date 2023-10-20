@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Scoreboard from "./Scoreboard";
-import "../style/App.css";
 import CardList from "./CardList";
+import CardChooser from "../utils/cardchooser";
+import dogsData from "../assets/dogs.json";
+import "../style/App.css";
 
 function App() {
   const [score, setScore] = useState(0);
-  const [gameId, setGameId] = useState(1);
+  const [selectedDogs, setSelectedDogs] = useState([]);
 
-  function resetGame() {
-    setScore(0);
-    setGameId((prevGameId) => prevGameId + 1);
-  }
+  const shuffleDogs = () => {
+    const newSelectedDogs = CardChooser(dogsData);
+    setSelectedDogs(newSelectedDogs);
+  };
+
+  useEffect(() => {
+    shuffleDogs();
+  }, []);
 
   const handleCardClick = (action) => {
+    shuffleDogs();
+
     if (action === "endGame") {
       alert(`Game Over! Your score: ${score}`);
-      resetGame();
+      setScore(0);
     } else if (action === "incrementScore") {
       setScore((prevScore) => prevScore + 1);
     }
@@ -24,7 +32,7 @@ function App() {
   return (
     <>
       <Scoreboard currentStreak={score} />
-      <CardList key={gameId} onClick={handleCardClick} />
+      <CardList dogs={selectedDogs} onClick={handleCardClick} />
     </>
   );
 }

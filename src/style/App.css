@@ -1,19 +1,28 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+
+.scoreboard {
+  padding: 10px 20px;
+  background: #6495ed; /* a shade lighter than the title for a cooler look */
+  border-radius: 5px;
+  margin: 0 auto 20px;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.card {
-  padding: 2em;
+/* Consider adding animations or transitions for interactive elements */
+button {
+  padding: 10px 20px;
+  background-color: #f0ad4e; /* Bootstrap's standard button color */
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
-.dogboard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.read-the-docs {
-  color: #888;
+button:hover {
+  background-color: #ec971f; /* Darker shade for hover effect */
+  cursor: pointer;
 }

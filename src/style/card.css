@@ -1,28 +1,24 @@
 .card-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 200px;
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .card-container:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-container img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ccc;
-    border-radius: 8px 8px 0 0;
-  }
-  
-  .card-container p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-  }
-  
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px; /* Adjust based on your preference and image dimensions */
+  height: 200px; /* Adjust based on your preference and image dimensions */
+  display: inline-block;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+  transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.card-container img {
+  width: 100%; /* Ensuring uniform image size */
+  height: 120px; /* Adjust if necessary, based on your image aspect ratios */
+  object-fit: cover; /* Ensures the images cover the area without distortion */
+  border-radius: 5px; /* Optional: for rounded image corners */
+  margin-bottom: 5px;
+}
