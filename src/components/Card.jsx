@@ -8,15 +8,17 @@ function Card({ name, image, onClick }) {
 
   const handleCardClick = () => {
     if (pressStatus === "pressed") {
+      console.log("I have been pressed again");
       onClick("endGame");
     } else {
+      console.log("First Press");
       setPressStatus("pressed");
       onClick("incrementScore");
     }
   };
 
   return (
-    <div onClick={() => onClick(dog)} className="card-container">
+    <div onClick={handleCardClick} className="card-container">
       <img src={image} alt={name} />
       <p>{name}</p>
     </div>

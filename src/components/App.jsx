@@ -5,11 +5,17 @@ import CardList from "./CardList";
 
 function App() {
   const [score, setScore] = useState(0);
+  const [gameId, setGameId] = useState(1);
+
+  function resetGame() {
+    setScore(0);
+    setGameId((prevGameId) => prevGameId + 1);
+  }
 
   const handleCardClick = (action) => {
     if (action === "endGame") {
       alert(`Game Over! Your score: ${score}`);
-      setScore(0);
+      resetGame();
     } else if (action === "incrementScore") {
       setScore((prevScore) => prevScore + 1);
     }
@@ -18,7 +24,7 @@ function App() {
   return (
     <>
       <Scoreboard currentStreak={score} />
-      <CardList />
+      <CardList key={gameId} onClick={handleCardClick} />
     </>
   );
 }
