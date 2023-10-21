@@ -6,10 +6,10 @@ function Card({ name, image, onClick }) {
 
   const handleCardClick = () => {
     if (pressStatus === "pressed") {
-      onClick("endGame");
+      onClick("end");
     } else {
       setPressStatus("pressed");
-      onClick("incrementScore");
+      onClick("score");
     }
   };
 

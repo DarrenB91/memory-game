@@ -18,13 +18,13 @@ function App() {
     shuffleDogs();
   }, []);
 
-  const handleCardClick = (action) => {
+  const processCardClick = (action) => {
     shuffleDogs();
 
-    if (action === "endGame") {
+    if (action === "end") {
       alert(`Game Over! Your score: ${score}`);
       setScore(0);
-    } else if (action === "incrementScore") {
+    } else if (action === "score") {
       setScore((prevScore) => prevScore + 1);
     }
   };
@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Scoreboard currentStreak={score} />
-      <CardList dogs={selectedDogs} onClick={handleCardClick} />
+      <CardList dogs={selectedDogs} onClick={processCardClick} />
     </>
   );
 }
